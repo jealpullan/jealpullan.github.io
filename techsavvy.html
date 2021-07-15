@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Are you tech savvy?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="techsavvy.html">Are you tech savvy?</a></li>
+							<li><a href="covid.html">COVID map</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Are you tech savvy?</h1>
+							<h3>Background</h3>
+							<p>In 2017 Mozilla sent out a <a href="https://blog.mozilla.org/en/mozilla/10-fascinating-things-we-learned-when-we-asked-the-world-how-connected-are-you/">survey</a> asking how connected people felt. 189 770 people from 218 countries responded. One of the questions asked how technologically savvy you considered yourself. There were four response options Ultra nerd, technologically savvy, average user and Luddite. The survey asked a range of different questions about technology.</p>
+							<p> I looked at how New Zealanders self-identify their level of technical savvy. Do tech-savvy people in NZ know more than average users? Can we separate these groups? A proxy for how savvy you are is how much you know about tech and what tech you own. Do tech-savvy people know more than average users? Do Ultra nerds own more tech than an average user? I want to investigate whether there are actual differences between these groups of people. There were 20 explanatory variables in total coded as dummy variables.</p>
+							<h3>Analysis</h3>
+							<p>Analysis was done using R</p>
+							<img src="scaled.png" alt="" width="300" height="260"/><img src="pairs.png" alt="" width="300" height="300"/>
+							<p>The scaled PCA analysis indicated the use of 4 components. And the pairs plot showed no signs of structures</p>
+							<p>An LDA analysis was carried out using the score for the first four components from the PCA analysis.</p>
+							<img src="techs.png" alt="" width="450" height="320"/>
+							<p>This plot of LDA score (above) show the separation of the different groups. We can see the groups are quite well defined but only differ along the LD1 component. This component corresponds to what a person knows. The higher the LD1 score, the more they know about tech</p>
+							<img src="preds'.png" alt="" width="550" height="200"/>
+							<p>This table of predictions show the model confused many of the Ultra Nerds with other lower groups. Overall the model did a fairly good job of predicting the groups</p>
+							<img src="cer.png" alt="" width="390" height="190"/>
+							<p>The classification error rates (above) indicate using 2 or 3 components isn't actually more useful than using 1 component</p>
+							<h3>Conlusion</h3>
+							<p>Are Ultra Nerds more savvy than others? Not really.</p>
+							<p>Are there actually different groups? Yes. There appears to be 2 distinct groups: Average users and Tech Savvy. Tech Savvy people know more about tech than average users but Ultra Nerds dont really know more than Tech Savvy people.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<p>jennpullan@gmail.com</p>
+							</section>
+
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
